@@ -83,9 +83,9 @@ touch src/styles/css/style.css
 
 # Set up the imports in styles/scss/style.scss as follows:
 /bin/cat <<EOM >src/styles/scss/style.scss
-# ======================================
-#  Partial Imports
-# ======================================
+// ======================================
+//  Partial Imports
+// ======================================
 
 # Utilities
 @import 'utilities/variables',
@@ -118,8 +118,8 @@ EOM
 
 body {
   margin: 0;
-  color: $color-text-primary;
-  font-family: $font-stack-primary;
+  color: \$color-text-primary;
+  font-family: \$font-stack-primary;
 }
 
 ul {
@@ -129,10 +129,10 @@ ul {
 }
 
 a {
-  color: $color-text-primary;
+  color: \$color-text-primary;
   text-decoration: none;
   &:hover {
-    color: $color-text-secondary;
+    color: \$color-text-secondary;
   }
 }
 EOM
@@ -147,23 +147,23 @@ EOM
 //  Blue, Yellow, Dark Blue
 // ======================================
 
-$color-primary: #0b3c5d;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+\$color-primary: #0b3c5d;
+\$color-primary-light: lighten(\$color-primary, 20%);
+\$color-primary-dark: darken(\$color-primary, 20%);
 
-$color-secondary: #328cc1;
-$color-secondary-light: lighten($color-secondary, 20%);
-$color-secondary-dark: darken($color-secodary, 20%);
+\$color-secondary: #328cc1;
+\$color-secondary-light: lighten(\$color-secondary, 20%);
+\$color-secondary-dark: darken(\$color-secodary, 20%);
 
-$color-accent: #d9b310;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+\$color-accent: #d9b310;
+\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
 
-$color-bg: #3cc47c;
-$color-bg-light: lighten($color-bg);
-$color-bg-dark: darken($color-bg);
+\$color-bg: #3cc47c;
+\$color-bg-light: lighten(\$color-bg);
+\$color-bg-dark: darken(\$color-bg);
 
-$color-text: black;
-$color-text-secondary: white;
+\$color-text: black;
+\$color-text-secondary: white;
 EOM
 
 # Components 
@@ -175,20 +175,20 @@ EOM
 %btn {
   max-width: 50rem;
   font-weight: bold;
-  margin: $gutter auto;
+  margin: \$gutter auto;
   padding: 0.75em 1.5em;
   border-radius: 0.35em;
   transition: opacity 0.3s;
   text-transform: uppercase;
-  background-color: $color-secondary;
+  background-color: \$color-secondary;
 
   &:hover {
     opacity: 0.8;
-    background-color: $color-secondary-light;
+    background-color: \$color-secondary-light;
   }
   &:active {
     opacity: initial;
-    background-color: $color-secondary-light;    
+    background-color: \$color-secondary-light;    
   }
 }
 EOM
@@ -213,9 +213,9 @@ EOM
 
 // Main content
 .main {
-  @include flexy($disp: flex, $wrap: wrap);
+  @include flexy(\$disp: flex, \$wrap: wrap);
   @include center;
-  background-color: $color-accent;
+  background-color: \$color-accent;
 
   @include mq('s') {
   }
@@ -227,8 +227,8 @@ EOM
 
 
 .hero {
-  background: linear-gradient($color-bg, $color-shade);
-  color: $color-text-secondary;
+  background: linear-gradient(\$color-bg, \$color-shade);
+  color: \$color-text-secondary;
   p {
     font-size: 1.2em;
   }
@@ -237,21 +237,21 @@ EOM
 .banner {
   padding: 20px;
   margin: 50px 0;
-  color: $color-text-primary;
-  background-color: $color-primary-light;
+  color: \$color-text-primary;
+  background-color: \$color-primary-light;
 }
 
 .card {
   width: 100%;
-  margin: $gutter;
+  margin: \$gutter;
   padding: 1.5em 1em;
   border-radius: 0.25em;
-  background-color: $color-accent;
-  border: 1px solid darken($color-shade, 20%);
+  background-color: \$color-accent;
+  border: 1px solid darken(\$color-shade, 20%);
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
-    color: $color-text-primary;
+    color: \$color-text-primary;
   }
   @include mq('s') {
     flex: 1 per-line(2);
@@ -273,11 +273,11 @@ EOM
 // ======================================
 
 footer {
-  @include flexy($disp: flex, $dir: column, $wrap: wrap);
+  @include flexy(\$disp: flex, \$dir: column, \$wrap: wrap);
   height: 100px;
   padding: 2em 0 0;
   margin-top: 1.5em;
-  background-color: $color-shade;
+  background-color: \$color-shade;
 }
 
 .footer-col {
@@ -285,7 +285,7 @@ footer {
   margin-top: 1em;
   min-width: 50px;
   min-height: 50px;
-  background-color: $color-shade;
+  background-color: \$color-shade;
   @include mq('s') {
     flex: 1 per-line(2);
     justify-content: space-around;
@@ -302,12 +302,12 @@ footer {
   @include center;
   max-width: 100vw;
   padding-top: 2rem;
-  color: $color-text-primary;
+  color: \$color-text-primary;
   a {
-    color: $color-text-secondary;
+    color: \$color-text-secondary;
   }
   a:hover {
-    color: $color-shade;
+    color: \$color-shade;
   }
 }
 EOM
@@ -321,7 +321,7 @@ EOM
   padding-top: 10px;
   min-height: 40px;
   h1 {
-    color: $color-text-primary;
+    color: \$color-text-primary;
     margin-bottom: 0;
     font-size: 3.8em;
     letter-spacing: 1px;
@@ -332,7 +332,7 @@ EOM
   p {
     margin: 0;
     font-size: 1.25em;
-    color: $color-accent;
+    color: \$color-accent;
   }
 }
 EOM
@@ -343,14 +343,14 @@ EOM
 //  Functions
 // ======================================
 
-@function px-to-pc($target, $context: $max-width) {
-  @return ($target / $context) * 100%;
+@function px-to-pc(\$target, \$context: \$max-width) {
+  @return (\$target / \$context) * 100%;
 }
 
-@function per-line($items) {
-  $g-pct: px-to-pc($gutter) * 2;
-  $g-total: $items * $g-pct;
-  @return (100% / $items) - $g-total;
+@function per-line(\$items) {
+  \$g-pct: px-to-pc(\$gutter) * 2;
+  \$g-total: \$items * \$g-pct;
+  @return (100% / \$items) - \$g-total;
 }
 EOM
 
@@ -381,27 +381,27 @@ EOM
 }
 
 // Flex container
-@mixin flexy($disp: flex, $dir: null, $wrap: null, $justify: null) {
-  display: $disp;
-  flex-direction: $dir;
-  flex-wrap: $wrap;
-  justify-content: $justify;
+@mixin flexy(\$disp: flex, \$dir: null, \$wrap: null, \$justify: null) {
+  display: \$disp;
+  flex-direction: \$dir;
+  flex-wrap: \$wrap;
+  justify-content: \$justify;
 }
 
 // Media Queries
-@mixin mq($break) {
-  @if $break == 's' {
-    @media (min-width: $break-s) {
+@mixin mq(\$break) {
+  @if \$break == 's' {
+    @media (min-width: \$break-s) {
       @content;
     }
   }
-  @else if $break == 'm' {
-    @media (min-width: $break-m) {
+  @else if \$break == 'm' {
+    @media (min-width: \$break-m) {
       @content;
     }    
   }
-  @else if $break == 'l' {
-    @media (min-width: $break-l) {
+  @else if \$break == 'l' {
+    @media (min-width: \$break-l) {
       @content;
     }    
   }
@@ -413,36 +413,36 @@ EOM
 //  Variables
 // ======================================
 
-$color-primary: #0b3c5d;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+\$color-primary: #0b3c5d;
+\$color-primary-light: lighten(\$color-primary, 20%);
+\$color-primary-dark: darken(\$color-primary, 20%);
 
-$color-secondary: #328cc1;
-$color-secondary-light: lighten($color-secondary, 20%);
-$color-secondary-dark: darken($color-secondary, 20%);
+\$color-secondary: #328cc1;
+\$color-secondary-light: lighten(\$color-secondary, 20%);
+\$color-secondary-dark: darken(\$color-secondary, 20%);
 
-$color-accent: #d9b310;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+\$color-accent: #d9b310;
+\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
 
-$color-bg: #3cc47c;
-$color-bg-light: lighten($color-bg, 20%);
-$color-bg-dark: darken($color-bg, 20%);
+\$color-bg: #3cc47c;
+\$color-bg-light: lighten(\$color-bg, 20%);
+\$color-bg-dark: darken(\$color-bg, 20%);
 
-$color-text-primary: black;
-$color-text-secondary: white;
+\$color-text-primary: black;
+\$color-text-secondary: white;
 
 // Fonts
-$font-stack-primary: 'Raleway', sans-serif;
-$font-stack-secondary: 'Bree Serif', serif;
+\$font-stack-primary: 'Raleway', sans-serif;
+\$font-stack-secondary: 'Bree Serif', serif;
 
 // Layout
-$max-width: 1070px;
-$gutter: 10px;
+\$max-width: 1070px;
+\$gutter: 10px;
 
 // Breakpoints
-$break-s: 48em;
-$break-m: 62em;
-$break-l: 75em;
+\$break-s: 48em;
+\$break-m: 62em;
+\$break-l: 75em;
 EOM
 
 # Create React components folder and files. From the src directory
@@ -543,14 +543,10 @@ EOM
 # Edit package.json to include the SASS watch command in scripts
 # "sass" : "sass --watch src/styles/scss:src/styles/css"
 # Shell scripting optimized for oh-my-zshell linux terminal
-BEFORE=('  "scripts": {
-    "start": "react-scripts start",
-')
-AFTER=('  "scripts": {
-    "sass" : "sass --watch src/styles/scss:src/styles/css",
-    "start": "react-scripts start",
-')
-sed -i -e 's/$BEFORE/$AFTER/g' package.json
+# \ allows newline and indentation tabs to be included in the output (to conform with formatting)
+# sed replaced what is after 's/ with what is after the second / but before /g
+sed -i -e 's/"start": "react-scripts start",/"sass":"sass --watch src\/styles\/scss:src\/styles\/css",\
+    "start": "react-scripts start",/g' package.json
 
 # Start up SASS from the root directory (now that it’s in package.json)
 npm start sass
